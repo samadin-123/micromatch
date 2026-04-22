@@ -8,7 +8,8 @@ const utils = require('picomatch/lib/utils');
 const isEmptyString = v => v === '' || v === './';
 const hasBraces = v => {
   const index = v.indexOf('{');
-  return index > -1 && v.indexOf('}', index) > -1;
+  if (index === -1) return false;
+  return v.indexOf('}', index) > -1;
 };
 
 /**
