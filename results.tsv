@@ -1,1 +1,2 @@
 thesis	attempt	metric	baseline	status	summary
+#2	thesis/2-optimize-hasbraces-check-with-early-exit	1298472.0000	1248334.0000	accepted	Optimized hasBraces with explicit early exit when opening brace not found. 4.0% performance improvement.
