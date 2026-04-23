@@ -201,7 +201,13 @@ micromatch.contains = (str, pattern, options) => {
   }
 
   if (typeof pattern === 'string') {
-    if (isEmptyString(str) || isEmptyString(pattern)) {
+    // Inline empty string checks with short-circuit optimization
+    // If str is empty, return false immediately without checking pattern
+    if (str === '' || str === './') {
+      return false;
+    }
+    // Only check pattern if str is non-empty
+    if (pattern === '' || pattern === './') {
       return false;
     }
 
